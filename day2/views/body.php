@@ -1,44 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title> </title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width">
-
-		<!-- Main -->
-		<link rel="stylesheet" type="text/css" href="css/main.css">
-
-	</head>
-	<body>
-		<div id="wrapper">
-
-			<header>
-				<div id="logo"><a href="#"><img src="images/logo.png" alt="Logo Here"></a></div>
-
-				<form id="form_login">
-					<p> Don't have an account? <a href="#"> Register Now! </a></p>
-					<fieldset>
-						<input type="text" id="login_username" placeholder="username" required="required" />
-						<input type="text" id="login_password" placeholder="password" required="required" />
-						<input type="submit" id="login_submit" value="LOGIN"/>
-					</fieldset>
-				</form>
-
-				<div class="clear_fix"></div>
-
-				<nav>
-					<ul>
-						<li>All Albums</li>
-						<li>New Albums</li>
-						<li>Used Albums</li>
-						<li>Other Stuff</li>
-						<li>Questions</li>
-					</ul>
-				</nav>
-				<div class="clear_fix"></div>
-			</header>
-
-			<div id="main_content">
+<div id="main_content">
 
 				<section id="banner">
 					<img src="images/banner.png" alt="Banner Placeholder Image" />
@@ -86,7 +46,7 @@
 				</section> <!-- end new releases -->
 
 				<section id="used_records" class="clear_fix"> 
-					<h2> Used Records & CDs </h2>
+					<h2> Used Records &amp; CDs </h2>
 					<ul>
 						<li class="item_block"> 
 							<img src="images/album_art.png" alt="Album Art Placeholder Image" /> 
@@ -117,13 +77,3 @@
 				</section> <!-- end new used records -->
 
 			</div> <!-- end main_content -->
-
-			<footer>
-					<p> &copy; 2013 Nicole Aitchison</p>
-					<p>Full Sail University SSL 1310</p>
-			</footer>
-
-		</div> <!-- end wrapper -->
-
-	</body>
-</html>
