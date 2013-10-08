@@ -44,7 +44,7 @@
 
 			$pDate = "/^(([1-9])|(0[1-9])|(1[0-2]))\/(([0-9])|([0-2][0-9])|(3[0-1]))\/(([0-9][0-9])|([1-2][0,9][0-9][0-9]))$/";
 			$pPrice = "/^[$][0-9]*(\.)[0-9][0-9]$/";
-			$pWebsite = "/^(http|https|ftp)\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*$/";
+			$pWebsite = "/((mailto\:|(news|(ht|f)tp(s?))\://){1}\S+)/";
 
 			// $fieldsetOne
 			if($fieldsetOne['albumName'] == null || $fieldsetOne['albumName'] == ""){
@@ -281,6 +281,25 @@
 					echo ', cassette Price: invalid (required)';
 				
 				}
+			}
+
+			// $fieldsetFour
+			if($fieldsetFour != null || $fieldsetFour != ""){
+
+				if(!preg_match($pWebsite, $fieldsetFour)){
+
+					echo ', website: invalid ';
+
+				}else if(preg_match($pWebsite, $fieldsetFour)){
+
+					echo ', website: valid';
+
+				}
+
+			}else{
+
+				echo ', website: --- (optional)';
+
 			}
 
 		}
