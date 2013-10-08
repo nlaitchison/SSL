@@ -11,8 +11,8 @@ $validationModel = new validationModel();
 $data = array("name"=>"nicole");
 $viewModel->getView("views/header.php", $data);
 $viewModel->getView("views/nav.php", $data);
+//$viewModel->getView("views/body.php", $data);
 $viewModel->getView("views/add_item.php", $data);
-$viewModel->getView("views/footer.php", $data);
 
 if(!empty($_GET["action"])){
 	
@@ -29,14 +29,29 @@ if(!empty($_GET["action"])){
 		echo 'validateLogin: ';
 		echo $validateLogin;
 	}
-	
-	if($_GET["action"] == "create_item"){
+	else if($_GET["action"] == "create_album"){
 
+		echo 'create item clicked';
+		
+		$fieldsetOne = array('albumName' => $_POST["album_name"], 'albumPreorder' => $_POST["album_preorder"]);
+		$fieldsetTwo = array('albumImage' => $_POST["album_image"], 'albumDescription' => $_POST["album_description"], 'albumRelease' =>$_POST["album_release_date"]);
+		$fieldsetThree = $_POST["album_condition"];
+		$fieldsetFour = $_POST["artist_site"];
+
+		$twelve = array('twelve' => $_POST["twelve"], 'twelve_stock' => $_POST["twelve_stock"], 'twelve_price' => $_POST["twelve_price"], 'twelve_color' => $_POST["twelve_color"]);
+		$seven = array('seven' => $_POST["seven"], 'seven_stock' => $_POST["seven_stock"], 'seven_price' => $_POST["seven_price"], 'seven_color' => $_POST["seven_color"]);
+		$cd = array('cd' => $_POST["cd"], 'cd_stock' => $_POST["cd_stock"], 'cd_price' => $_POST["cd_price"]);
+		$cassette = array('cassette' => $_POST["cassette"], 'cassette_stock' => $_POST["cassette_stock"], 'cd_price' => $_POST["cassette_price"]);
+
+
+		$validateCreateItem = $validationModel->validateCreateItem($fieldsetOne, $fieldsetTwo, $fieldsetThree, $fieldsetFour, $twelve, $seven, $cd, $cassette);
 		
 	}
 }
 
-//<cfdump var="">
+
+
+$viewModel->getView("views/footer.php", $data);
 
 ?>
 
@@ -67,4 +82,8 @@ if(!empty($_GET["action"])){
 
 	$viewModel->getView("views/form.php", $data);
 
-}  -->
+}  
+
+//<cfdump var="">
+
+-->

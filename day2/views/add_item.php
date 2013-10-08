@@ -11,7 +11,7 @@
 						<fieldset>
 							<div class="form_input">
 								<label for="album_name"> Album Name </label>
-								<input type="text" name="album_name" id="album_name" required="required"/>
+								<input type="text" name="album_name" id="album_name" />
 								<label class="checkbox"> 
 									<input type="checkbox" name="album_preorder" value="preorder" /> 
 										Preorder
@@ -26,7 +26,7 @@
 							<div class="form_input">
 								<label for="album_description"> Album Description </label>
 								<div class="clear_fix"></div>
-								<textarea name="album_description" id="album_description" required="required">
+								<textarea name="album_description" id="album_description">
 									Enter a description...
 								</textarea>
 							</div>
@@ -53,12 +53,12 @@
 							<label> Album Format </label>
 								<div class="form_input">	
 									<label class="checkbox"> 
-										<input type="checkbox" name="" value="12" /> 
+										<input type="checkbox" name="twelve" value="12" /> 
 											12" Vinyl
 									</label>
 									<input type="text" name="twelve_stock" placeholder="Enter # in Stock"/>
 									<input type="text" name="twelve_price" placeholder="Enter Price - $0.00"/>
-									<select multiple id="twelve_color" name="tweleve_color[]">
+									<select multiple id="twelve_color" name="twelve_color[]">
 										<option value="Black">Black</option>
 										<option value="White">White</option>
 										<option value="Orange Creamsicle">Orange Creamsicle</option>
@@ -69,7 +69,7 @@
 								</div>
 								<div class="form_input">
 									<label class="checkbox"> 
-										<input type="checkbox" name="" value="7" /> 
+										<input type="checkbox" name="seven" value="7" /> 
 											7" Vinyl
 									</label>
 									<input type="text" name="seven_stock" placeholder="Enter # in Stock"/>
@@ -85,7 +85,7 @@
 								</div>
 								<div class="form_input">
 									<label class="checkbox"> 
-										<input type="checkbox" name="" value="CD" /> 
+										<input type="checkbox" name="cd" value="cd" /> 
 											CD 
 									</label>
 									<input type="text" name="cd_stock" placeholder="Enter # in Stock"/>
@@ -93,7 +93,7 @@
 								</div>
 								<div class="form_input">
 									<label class="checkbox"> 
-										<input type="checkbox" name="" value="Cassete" /> 
+										<input type="checkbox" name="cassette" value="cassette" /> 
 											Cassette 
 									</label>
 									<input type="text" name="cassette_stock" placeholder="Enter # in Stock"/>
