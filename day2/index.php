@@ -11,15 +11,28 @@ $validationModel = new validationModel();
 $data = array("name"=>"nicole");
 $viewModel->getView("views/header.php", $data);
 $viewModel->getView("views/nav.php", $data);
-$viewModel->getView("views/body.php", $data);
+$viewModel->getView("views/add_item.php", $data);
 $viewModel->getView("views/footer.php", $data);
 
 if(!empty($_GET["action"])){
 	
 	if($_GET["action"] == "login"){
 
+		echo 'login clicked,  ';
+		//var_dump($_POST);
 
+		$loginEmail = $_POST["login_email"];
+		$loginPassword = $_POST["login_password"];
 
+		$validateLogin = $validationModel->validateLogin($loginEmail, $loginPassword);
+
+		echo 'validateLogin: ';
+		echo $validateLogin;
+	}
+	
+	if($_GET["action"] == "create_item"){
+
+		
 	}
 }
 

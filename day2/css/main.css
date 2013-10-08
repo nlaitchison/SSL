@@ -26,7 +26,7 @@ html,body,div,form,fieldset,legend,label,h1,h2,h3,h4,h5,h6,p,ul,dl,dt,dd,figure,
 }
 
 body{
-	font: 14px Helvetica;
+	font: 14px Helvetica, sans-serif;
 }
 
 h2{
@@ -39,7 +39,7 @@ h2{
 	padding: 0; 
 }
 
-.item_block{
+.album_block{
 	margin: 10px;
 	width: 220px;
 }
@@ -62,6 +62,26 @@ li{
 	float: left;
 }
 
+fieldset{
+	border: none;
+}
+
+label {
+	float: left;
+	text-align: right;
+	margin-right: 10px;
+	line-height: 24px;
+}
+
+input{
+	float: left;
+	margin-right: 10px;
+}
+
+.form_input{
+	clear: both;
+	margin: 8px 0;
+}
 
 /* ---------------------------------------------------------------------------------------------------
 		∆ Header
@@ -113,8 +133,8 @@ nav li{
 	margin-right: 0;
 }
 
-#form_login fieldset{
-	border: none;
+#user_logout{
+	float: right;
 }
 
 /* ---------------------------------------------------------------------------------------------------
@@ -124,6 +144,41 @@ nav li{
 #banner{
 	margin: 10px;
 	height: 400px;
+}
+
+/* ---------------------------------------------------------------------------------------------------
+		∆ Add an album
+---------------------------------------------------------------------------------------------------*/
+
+#album_image {
+	width: 400px;
+	float: left;
+	margin-left: 10px;
+}
+
+form#create_album {
+	width: 500px;
+	float: left;
+	margin-left: 20px;
+}
+
+form#create_album fieldset{
+	margin-bottom: 10px;
+	background-color: #eee;
+	padding: 8px 15px;
+}
+
+input#add_album {
+	float: right;
+}
+
+textarea#album_description{
+	clear: both;
+	min-height: 140px;
+	max-height: 140px;
+	min-width: 464px;
+	max-width: 464px;
+	font: 14px Helvetica;
 }
 
 /* ---------------------------------------------------------------------------------------------------

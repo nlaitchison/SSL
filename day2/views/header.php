@@ -19,7 +19,7 @@
 					<p> Don't have an account? <a href="#"> Register Now! </a></p>
 					<fieldset>
 						<input type="text" id="login_email" name="login_email" placeholder="email address" required="required" />
-						<input type="text" id="login_password" name="login_password" placeholder="password" required="required" />
+						<input type="password" id="login_password" name="login_password" placeholder="password" required="required" />
 						<input type="submit" id="login_submit" value="LOGIN"/>
 					</fieldset>
 				</form>
