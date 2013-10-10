@@ -34,6 +34,7 @@ if(!empty($_GET["action"])){
 		echo 'validateLogin: ';
 		echo $validateLogin;
 	}
+	
 	// admin album crud actions
 	else if($_GET["action"] == "createAlbumForm"){
 		$viewModel->getView("views/album_create.php", $data);
@@ -88,6 +89,7 @@ if(!empty($_GET["action"])){
 		$data = $albumsModel->getAlbums();
 		$viewModel->getView("views/album_read.php", $data);
 	}
+
 	// user crud actions
 	else if($_GET["action"] == "userInfo"){
 		$data = $usersModel->getUsers();

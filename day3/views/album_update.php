@@ -2,6 +2,7 @@
 
 <div id="main_content">
 
+				<p class='create_new_album'><a href='?action=adminAlbumInfo'> back/cancel</a></p>
 				<h2> Update Album </h2>
 
 				<section id="album_image"> 

@@ -110,8 +110,11 @@ nav ul{
 
 nav li{
 
-	width: 188px;
+	width: 180px;
+	margin-right: 8px;
+	line-height: 40px;
 	text-align: center;
+	background-color: #D2D1D1;
 }
 
 #form_login{
@@ -198,6 +201,10 @@ textarea#album_description{
 	min-width: 464px;
 	max-width: 464px;
 	font: 14px Helvetica;
+}
+
+.hidden_id {
+	display: none;
 }
 
 /* ---------------------------------------------------------------------------------------------------
