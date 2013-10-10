@@ -146,8 +146,27 @@ nav li{
 	height: 400px;
 }
 
+
 /* ---------------------------------------------------------------------------------------------------
-		∆ Add an album
+		∆ Admin
+---------------------------------------------------------------------------------------------------*/
+
+.admin_albums{
+	background-color: #eee;
+	margin: 15px 10px;
+	padding: 15px;
+}
+
+.admin_albums p{
+	margin-bottom: 8px;
+}
+
+.create_new_album{
+	margin: 15px 10px;
+}
+
+/* ---------------------------------------------------------------------------------------------------
+		∆ Create/Update an album
 ---------------------------------------------------------------------------------------------------*/
 
 #album_image {
@@ -156,13 +175,13 @@ nav li{
 	margin-left: 10px;
 }
 
-form#create_album {
+form#create_album, form#update_album {
 	width: 500px;
 	float: left;
 	margin-left: 20px;
 }
 
-form#create_album fieldset{
+form#create_album fieldset, form#update_album fieldset{
 	margin-bottom: 10px;
 	background-color: #eee;
 	padding: 8px 15px;

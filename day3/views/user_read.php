@@ -12,7 +12,6 @@
 		echo $user['user_password'].'<br>';
 		echo "<a href='?action=deleteUser&user_id=".$user["user_id"]."'> delete </a>";
 		echo "<a href='?action=updateUserForm&user_id=".$user["user_id"]."'> update </a>";
-
 		echo '<br> ----------------------- <br>';
 	}
 

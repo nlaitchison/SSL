@@ -7,7 +7,7 @@
 				</section>
 
 				<section>
-					<form id="create_album" method="post" action="?action=create_album">
+					<form id="create_album" method="post" action="?action=createAlbum">
 						<fieldset>
 							<div class="form_input">
 								<label for="album_name"> Album Name </label>
@@ -30,9 +30,7 @@
 							<div class="form_input">
 								<label for="album_description"> Album Description </label>
 								<div class="clear_fix"></div>
-								<textarea name="album_description" id="album_description">
-									Enter a description...
-								</textarea>
+								<textarea name="album_description" id="album_description">Enter a description...</textarea>
 							</div>
 							<div class="form_input">
 								<label for="album_release_date"> Album Release Date </label>
