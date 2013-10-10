@@ -13,9 +13,13 @@
 								<label for="album_name"> Album Name </label>
 								<input type="text" name="album_name" id="album_name" />
 								<label class="checkbox"> 
-									<input type="checkbox" name="album_preorder" value="preorder" /> 
+									<input type="checkbox" name="album_preorder" value="1" /> 
 										Preorder
 								</label>
+							</div>
+							<div class="form_input">
+								<label for="album_artist"> Artist Name </label>
+								<input type="text" name="album_artist" id="album_artist" />
 							</div>
 						</fieldset>	
 						<fieldset>

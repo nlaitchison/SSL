@@ -5,17 +5,19 @@
 include 'models/viewModel.php';
 include 'models/validationModel.php';
 include 'models/usersModel.php';
+include 'models/albumsModel.php';
 
 $viewModel = new viewModel();
 $validationModel = new validationModel();
 $usersModel = new usersModel();
+$albumsModel = new albumsModel();
 
 $data = array("name"=>"nicole");
 $viewModel->getView("views/header.php", $data);
 $viewModel->getView("views/nav.php", $data);
 //$viewModel->getView("views/body.php", $data);
 $viewModel->getView("views/add_item.php", $data);
-$viewModel->getView("views/create_user.php", $data);
+// $viewModel->getView("views/create_user.php", $data);
 
 if(!empty($_GET["action"])){
 	
@@ -36,7 +38,7 @@ if(!empty($_GET["action"])){
 
 		echo 'create item clicked';
 		
-		$fieldsetOne = array('albumName' => $_POST["album_name"], 'albumPreorder' => $_POST["album_preorder"]);
+		$fieldsetOne = array('albumName' => $_POST["album_name"], 'albumArtist' => $_POST["album_artist"], 'albumPreorder' => $_POST["album_preorder"]);
 		$fieldsetTwo = array('albumImage' => $_POST["album_image"], 'albumDescription' => $_POST["album_description"], 'albumRelease' =>$_POST["album_release_date"]);
 		$fieldsetThree = $_POST["album_condition"];
 		$fieldsetFour = $_POST["artist_site"];
@@ -47,8 +49,11 @@ if(!empty($_GET["action"])){
 		$cassette = array('cassette' => $_POST["cassette"], 'cassette_stock' => $_POST["cassette_stock"], 'cd_price' => $_POST["cassette_price"]);
 
 
-		$validateCreateItem = $validationModel->validateCreateItem($fieldsetOne, $fieldsetTwo, $fieldsetThree, $fieldsetFour, $twelve, $seven, $cd, $cassette);
+		//$validateCreateItem = $validationModel->validateCreateItem($fieldsetOne, $fieldsetTwo, $fieldsetThree, $fieldsetFour, $twelve, $seven, $cd, $cassette);
 		
+		$albumsModel->createAlbum($fieldsetOne, $fieldsetTwo, $fieldsetThree, $fieldsetFour, $twelve, $seven, $cd, $cassette);
+
+
 	}
 	else if($_GET["action"] == "users"){
 		$data = $usersModel->getUsers();
