@@ -83,38 +83,72 @@ input{
 	margin: 8px 0;
 }
 
+.custom_button{
+	border-radius: 5px;
+	background-color: #A30006;
+	padding: 8px 12px;
+	font: 14px/18px 'Helvetica Neue', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-align: center;
+	color: #ddd;
+	text-decoration: none;
+	margin-left: 10px;
+	float: right;
+}
+
+.custom_button:hover{
+	background-color: #920106;
+	color: #520000;
+}
+
 /* ---------------------------------------------------------------------------------------------------
 		∆ Header
 ---------------------------------------------------------------------------------------------------*/
 
-header{ 
+header{
+	background-color: #222;
+}
+#header_container{ 
 	width: 940px; 
-	margin: 10px auto; 
-	padding: 0 10px; 
+	margin: auto; 
+	padding: 10px; 
 }
 
 #logo{
 	float: left;
 	width: 160px;
-	height: 80px;
+	height: 60px;
 }
 
 nav{
-	margin-top: 20px;
+	background-color: #A30006; 
 }
 
-nav ul{
-	text-transform: uppercase;
-	font-size: 18px;
+#nav_container{ 
+	width: 940px; 
+	margin: auto; 
+	padding: 10px; 
 }
 
 nav li{
 
-	width: 180px;
-	margin-right: 8px;
-	line-height: 40px;
-	text-align: center;
-	background-color: #D2D1D1;
+	/*width: 100px;*/
+	margin-right: 35px;
+	font: 14px/18px 'Helvetica Neue', sans-serif;
+	text-align: left;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	/*background-color: #D2D1D1;*/
+}
+
+nav li a{
+	color: #ddd;
+	text-decoration: none;
+}
+
+nav li a:hover{
+	color: #520000;
 }
 
 #form_login{
@@ -155,9 +189,10 @@ nav li{
 ---------------------------------------------------------------------------------------------------*/
 
 .admin_albums{
-	background-color: #eee;
+	background-color: #e4e4e4;
+	border-radius: 5px;
 	margin: 15px 10px;
-	padding: 15px;
+	padding: 20px;
 }
 
 .admin_albums p{
@@ -166,6 +201,55 @@ nav li{
 
 .create_new_album{
 	margin: 15px 10px;
+}
+
+.admin_albums ul li{
+	clear: both;
+	margin-bottom: 8px;
+}
+
+.album_label{
+	width: 100px;
+	text-align: right;
+	font-weight: bold;
+	float: left;
+	margin-right: 10px;
+}
+
+.album_value{
+	float: left;
+}
+
+.album_buttons{
+	width: 100%;
+}
+
+.album_divider{
+	height: 1px;
+	width: 100%;
+	margin: 12px 0;
+	clear: both;
+	background-color: #666;
+}
+
+.album_name_header, .album_artist_header{
+	float: left;
+}
+
+.album_headers{
+	float: left;
+	margin-bottom: 6px;
+}
+
+.album_name_header{
+	font: 22px/24px 'Helvetica Neue', sans-serif;
+	text-transform: uppercase;
+	color: #A30006;
+	margin-right: 12px;
+}
+
+.album_artist_header{
+	font: 18px/26px 'Helvetica Neue', sans-serif;
 }
 
 /* ---------------------------------------------------------------------------------------------------

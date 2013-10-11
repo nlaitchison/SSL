@@ -1,0 +1,4 @@
+Nicole Aitchison 
+Day 3 CRUD
+Repo: https://github.com/nlaitchison/SSL/tree/master/day3
+Video: http://youtu.be/sBIFJp8A2u0

@@ -13,8 +13,8 @@ $usersModel = new usersModel();
 $albumsModel = new albumsModel();
 
 $data = array("name"=>"nicole");
-$viewModel->getView("views/header.php", $data);
-$viewModel->getView("views/nav.php", $data);
+$viewModel->getView("views/header_admin.php", $data);
+//$viewModel->getView("views/nav.php", $data);
 //$viewModel->getView("views/body.php", $data);
 //$viewModel->getView("views/album_create.php", $data);
 // $viewModel->getView("views/user_create.php", $data);
@@ -34,7 +34,7 @@ if(!empty($_GET["action"])){
 		echo 'validateLogin: ';
 		echo $validateLogin;
 	}
-	
+
 	// admin album crud actions
 	else if($_GET["action"] == "createAlbumForm"){
 		$viewModel->getView("views/album_create.php", $data);
@@ -117,6 +117,10 @@ if(!empty($_GET["action"])){
 		$data = $usersModel->getUsers();
 		$viewModel->getView("views/user_read.php", $data);
 	}
+}
+else{
+	$data = $albumsModel->getAlbums();	
+	$viewModel->getView("views/album_read.php", $data);
 }
 
 
