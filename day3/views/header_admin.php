@@ -26,7 +26,7 @@
 					<div id="nav_container">
 						<ul>
 							<li><a href="#">Manage Homepage</a></li>
-							<li><a href="#">Manage Albums</a></li>
+							<li><a href='?action=adminAlbumInfo'>Manage Albums</a></li>
 							<li><a href="#">View Orders</a></li>
 						</ul>
 						<div class="clear_fix"></div>

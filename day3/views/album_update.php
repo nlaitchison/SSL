@@ -67,48 +67,56 @@
 							<input type="checkbox" name="twelve" value="12" /> 
 								12" Vinyl
 						</label>
-						<input type="text" name="twelve_stock" placeholder="Enter # in Stock"/>
-						<input type="text" name="twelve_price" placeholder="Enter Price - $0.00"/>
-						<select multiple id="twelve_color" name="twelve_color[]">
-							<option value="Black">Black</option>
-							<option value="White">White</option>
-							<option value="Orange Creamsicle">Orange Creamsicle</option>
-							<option value="Clear">Clear</option>
-							<option value="Purple Red Speckled">Purple Red Speckled</option>
-							<option value="Gold">Gold</option>
-						</select>
+						<div class="format_inputs">
+							<input type="text" name="twelve_stock" placeholder="Enter # in Stock"/>
+							<input type="text" name="twelve_price" placeholder="Enter Price - $0.00"/>
+							<select multiple id="twelve_color" name="twelve_color[]">
+								<option value="Black">Black</option>
+								<option value="White">White</option>
+								<option value="Orange Creamsicle">Orange Creamsicle</option>
+								<option value="Clear">Clear</option>
+								<option value="Purple Red Speckled">Purple Red Speckled</option>
+								<option value="Gold">Gold</option>
+							</select>
+						</div>
 					</div>
 					<div class="form_input">
 						<label class="checkbox"> 
 							<input type="checkbox" name="seven" value="7" /> 
 								7" Vinyl
 						</label>
-						<input type="text" name="seven_stock" placeholder="Enter # in Stock"/>
-						<input type="text" name="seven_price" placeholder="Enter Price - $0.00"/>
-						<select multiple id="seven_color" name="seven_color[]">
-							<option value="Black">Black</option>
-							<option value="White">White</option>
-							<option value="Orange Creamsicle">Orange Creamsicle</option>
-							<option value="Clear">Clear</option>
-							<option value="Purple Red Speckled">Purple Red Speckled</option>
-							<option value="Gold">Gold</option>
-						</select>
+						<div class="format_inputs">
+							<input type="text" name="seven_stock" placeholder="Enter # in Stock"/>
+							<input type="text" name="seven_price" placeholder="Enter Price - $0.00"/>
+							<select multiple id="seven_color" name="seven_color[]">
+								<option value="Black">Black</option>
+								<option value="White">White</option>
+								<option value="Orange Creamsicle">Orange Creamsicle</option>
+								<option value="Clear">Clear</option>
+								<option value="Purple Red Speckled">Purple Red Speckled</option>
+								<option value="Gold">Gold</option>
+							</select>
+						</div>
 					</div>
 					<div class="form_input">
 						<label class="checkbox"> 
 							<input type="checkbox" name="cd" value="cd" /> 
 								CD 
 						</label>
-						<input type="text" name="cd_stock" placeholder="Enter # in Stock"/>
-						<input type="text" name="cd_price" placeholder="Enter Price - $0.00"/>
+						<div class="format_inputs">
+							<input type="text" name="cd_stock" placeholder="Enter # in Stock"/>
+							<input type="text" name="cd_price" placeholder="Enter Price - $0.00"/>
+						</div>
 					</div>
 					<div class="form_input">
 						<label class="checkbox"> 
 							<input type="checkbox" name="cassette" value="cassette" /> 
 								Cassette 
 						</label>
-						<input type="text" name="cassette_stock" placeholder="Enter # in Stock"/>
-						<input type="text" name="cassette_price" placeholder="Enter Price - $0.00"/>
+						<div class="format_inputs">
+							<input type="text" name="cassette_stock" placeholder="Enter # in Stock"/>
+							<input type="text" name="cassette_price" placeholder="Enter Price - $0.00"/>
+						</div>
 					</div>
 			</fieldset>
 			<fieldset>
@@ -117,7 +125,7 @@
 					<input type="url" name="artist_site" id="artist_site" value='<?=$album["albumWebsite"]?>' placeholder="http://sample.com"/>
 				</div>
 			</fieldset>	
-			<fieldset>
+			<fieldset id="buttons">
 				<input type="submit" name="update_album" id="update_album" class="custom_button" value="Update Album"/>
 				<a class='custom_button' href='?action=adminAlbumInfo'> cancel</a>
 			</fieldset>								

@@ -26,11 +26,11 @@ html,body,div,form,fieldset,legend,label,h1,h2,h3,h4,h5,h6,p,ul,dl,dt,dd,figure,
 }
 
 body{
-	font: 14px 'Helvetica Neue', sans-serif;
+	font: 14px Helvetica, sans-serif;
 }
 
 h2{
-	font-size: 24px;
+	margin: 0 10px;
 }
 
 #main_content{ 
@@ -70,99 +70,61 @@ label {
 	float: left;
 	text-align: right;
 	margin-right: 10px;
-	line-height: 28px;
-	font-size: 14px;
+	line-height: 24px;
 }
 
 input{
 	float: left;
 	margin-right: 10px;
-	font-size: 14px;
-}
-
-input, textarea {
-	border-radius: 5px;
-	border: none;
-	background-color: #f4f4f4;
-	padding: 6px;
 }
 
 .form_input{
 	clear: both;
-	margin: 0 0 12px;
-}
-
-.custom_button{
-	border: none;
-	border-radius: 5px;
-	background-color: #A30006;
-	padding: 8px 12px;
-	font: 14px/18px 'Helvetica Neue', sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	text-align: center;
-	color: #ddd;
-	text-decoration: none;
-	margin-left: 10px;
-	float: right;
-}
-
-.custom_button:hover{
-	background-color: #920106;
-	color: #520000;
-}
-
-a.custom_button{
-	padding: 9px;
+	margin: 8px 0;
 }
 
 /* ---------------------------------------------------------------------------------------------------
 		∆ Header
 ---------------------------------------------------------------------------------------------------*/
 
-header{
-	background-color: #222;
-}
-#header_container{ 
+header{ 
 	width: 940px; 
-	margin: auto; 
-	padding: 10px; 
+	margin: 10px auto; 
+	padding: 0 10px; 
 }
 
 #logo{
 	float: left;
 	width: 160px;
-	height: 60px;
+	height: 80px;
 }
 
 nav{
-	background-color: #A30006; 
+	margin-top: 20px;
 }
 
-#nav_container{ 
-	width: 940px; 
-	margin: auto; 
-	padding: 10px; 
+nav ul{
+	text-transform: uppercase;
+	font-size: 18px;
 }
 
 nav li{
 
-	/*width: 100px;*/
-	margin-right: 35px;
-	font: 14px/18px 'Helvetica Neue', sans-serif;
-	text-align: left;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	/*background-color: #D2D1D1;*/
+	width: 180px;
+	margin-right: 8px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #D2D1D1;
 }
 
 nav li a{
-	color: #ddd;
+	color: #333;
 	text-decoration: none;
 }
 
 nav li a:hover{
-	color: #520000;
+	color: #fff;
+	text-decoration: none;
 }
 
 #form_login{
@@ -202,25 +164,10 @@ nav li a:hover{
 		∆ Admin
 ---------------------------------------------------------------------------------------------------*/
 
-#page_header{
-	margin: 0 10px;
-}
-
-/*#page_header a.custom_button{
-	float: left;
-	margin: 0 10px 0 0;
-}*/
-
-h2#page_title{
-	float: left;
-	font: 24px/32px 'Helvetica Neue', sans-serif;
-}
-
 .admin_albums{
-	background-color: #e4e4e4;
-	border-radius: 5px;
+	background-color: #eee;
 	margin: 15px 10px;
-	padding: 20px;
+	padding: 15px;
 }
 
 .admin_albums p{
@@ -231,81 +178,26 @@ h2#page_title{
 	margin: 15px 10px;
 }
 
-.admin_albums ul li{
-	clear: both;
-	margin-bottom: 8px;
-}
-
-.album_label{
-	width: 100px;
-	text-align: right;
-	font-weight: bold;
-	float: left;
-	margin-right: 10px;
-}
-
-.album_value{
-	float: left;
-}
-
-.album_buttons{
-	width: 100%;
-}
-
-.album_divider{
-	height: 1px;
-	width: 100%;
-	margin: 12px 0;
-	clear: both;
-	background-color: #666;
-}
-
-.album_name_header, .album_artist_header{
-	float: left;
-}
-
-.album_headers{
-	float: left;
-	margin-bottom: 6px;
-}
-
-.album_name_header{
-	font: 22px/24px 'Helvetica Neue', sans-serif;
-	text-transform: uppercase;
-	color: #A30006;
-	margin-right: 12px;
-}
-
-.album_artist_header{
-	font: 18px/26px 'Helvetica Neue', sans-serif;
-}
-
 /* ---------------------------------------------------------------------------------------------------
 		∆ Create/Update an album
 ---------------------------------------------------------------------------------------------------*/
 
-#preview_album_image {
+#album_image {
 	width: 400px;
 	float: left;
 	margin-left: 10px;
 }
 
-input#album_image{
-	margin: 0px;
-}
-
-form#create_album_form, form#update_album_form {
-	width: 520px;
+form#create_album, form#update_album {
+	width: 500px;
 	float: left;
 	margin-left: 20px;
 }
 
-form#create_album_form fieldset, form#update_album_form fieldset{
+form#create_album fieldset, form#update_album fieldset{
 	margin-bottom: 10px;
-	padding: 10px 15px;
-	background-color: #e4e4e4;
-	border-radius: 5px;
-	
+	background-color: #eee;
+	padding: 8px 15px;
 }
 
 input#add_album {
@@ -314,10 +206,10 @@ input#add_album {
 
 textarea#album_description{
 	clear: both;
-	min-height: 134px;
-	max-height: 134px;
-	min-width: 475px;
-	max-width: 475px;
+	min-height: 140px;
+	max-height: 140px;
+	min-width: 464px;
+	max-width: 464px;
 	font: 14px Helvetica;
 }
 
@@ -325,47 +217,14 @@ textarea#album_description{
 	display: none;
 }
 
-input#update_album{
-	margin: 0 0 0 10px; 
-}
-
-input[type=radio], input[type=checkbox]{
-	height: 24px;
-}
-
-form#create_album_form fieldset#buttons, form#update_album_form fieldset#buttons{
-	background-color: transparent;
-	padding-right: 0px;
-}
-
-.format_inputs{
-	clear: both;
-	margin-left: 30px;
-}
-
-.format_inputs input{
-	clear: both;
-	margin-bottom: 10px;
-}
-
-.format_inputs select{
-	border: none;
-	margin-left: 10px;
-}
-
-.format_inputs select option{
-	padding: 2px 6px;
-}
-
 /* ---------------------------------------------------------------------------------------------------
 		∆ Footer
 ---------------------------------------------------------------------------------------------------*/
 
 footer{
-	background-color: #222;
+	background-color: #d2d1d1;
 	text-align: center;
 	padding: 40px 0;
-	color: #ccc;
 }
 
 /* ---------------------------------------------------------------------------------------------------

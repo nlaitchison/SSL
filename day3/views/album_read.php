@@ -20,6 +20,7 @@
 		echo '<li><span class="album_label">Image:</span> <span class="album_value">  '.$album['albumImage'].'</span></li>';
 		echo '<li><span class="album_label">Description:</span> <span class="album_value">  '.$album['albumDescription'].'</span></li>';
 		echo '<li><span class="album_label">Release Date:</span> <span class="album_value">  '.$album['albumReleaseDate'].'</span></li>';
+		echo '<li><span class="album_label">Artist Website:</span> <span class="album_value">  '.$album['albumWebsite'].'</span></li>';
 		echo '<div class="clear_fix"></div>';
 		echo '</ul>';
 		echo "<div class='album_buttons'>";
