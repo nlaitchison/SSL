@@ -26,11 +26,11 @@ html,body,div,form,fieldset,legend,label,h1,h2,h3,h4,h5,h6,p,ul,dl,dt,dd,figure,
 }
 
 body{
-	font: 14px Helvetica, sans-serif;
+	font: 14px 'Helvetica Neue', sans-serif;
 }
 
 h2{
-	margin: 0 10px;
+	font-size: 24px;
 }
 
 #main_content{ 
@@ -70,20 +70,30 @@ label {
 	float: left;
 	text-align: right;
 	margin-right: 10px;
-	line-height: 24px;
+	line-height: 28px;
+	font-size: 14px;
 }
 
 input{
 	float: left;
 	margin-right: 10px;
+	font-size: 14px;
+}
+
+input, textarea {
+	border-radius: 5px;
+	border: none;
+	background-color: #f4f4f4;
+	padding: 6px;
 }
 
 .form_input{
 	clear: both;
-	margin: 8px 0;
+	margin: 0 0 12px;
 }
 
 .custom_button{
+	border: none;
 	border-radius: 5px;
 	background-color: #A30006;
 	padding: 8px 12px;
@@ -188,6 +198,20 @@ nav li a:hover{
 		∆ Admin
 ---------------------------------------------------------------------------------------------------*/
 
+#page_header{
+	margin: 0 10px;
+}
+
+/*#page_header a.custom_button{
+	float: left;
+	margin: 0 10px 0 0;
+}*/
+
+h2#page_title{
+	float: left;
+	font: 24px/32px 'Helvetica Neue', sans-serif;
+}
+
 .admin_albums{
 	background-color: #e4e4e4;
 	border-radius: 5px;
@@ -256,22 +280,28 @@ nav li a:hover{
 		∆ Create/Update an album
 ---------------------------------------------------------------------------------------------------*/
 
-#album_image {
+#preview_album_image {
 	width: 400px;
 	float: left;
 	margin-left: 10px;
 }
 
-form#create_album, form#update_album {
-	width: 500px;
+input#album_image{
+	margin: 0px;
+}
+
+form#create_album, form#update_album_form {
+	width: 520px;
 	float: left;
 	margin-left: 20px;
 }
 
-form#create_album fieldset, form#update_album fieldset{
+form#create_album fieldset, form#update_album_form fieldset{
 	margin-bottom: 10px;
-	background-color: #eee;
-	padding: 8px 15px;
+	padding: 10px 15px;
+	background-color: #e4e4e4;
+	border-radius: 5px;
+	
 }
 
 input#add_album {
@@ -280,10 +310,10 @@ input#add_album {
 
 textarea#album_description{
 	clear: both;
-	min-height: 140px;
-	max-height: 140px;
-	min-width: 464px;
-	max-width: 464px;
+	min-height: 134px;
+	max-height: 134px;
+	min-width: 475px;
+	max-width: 475px;
 	font: 14px Helvetica;
 }
 
@@ -291,14 +321,19 @@ textarea#album_description{
 	display: none;
 }
 
+input#update_album{
+	margin: 0 0 0 10px; 
+}
+
 /* ---------------------------------------------------------------------------------------------------
 		∆ Footer
 ---------------------------------------------------------------------------------------------------*/
 
 footer{
-	background-color: #d2d1d1;
+	background-color: #222;
 	text-align: center;
 	padding: 40px 0;
+	color: #ccc;
 }
 
 /* ---------------------------------------------------------------------------------------------------

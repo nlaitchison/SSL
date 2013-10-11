@@ -1,7 +1,11 @@
 <div id="main_content">
-<h2> Admin Page - Albums </h2>
+	<div id="page_header">
+		<h2 id="page_title"> Manage Albums </h2>
+		<a class='custom_button' href='?action=createAlbumForm'> add album</a>
+	</div>
+<div class='clear_fix'></div>
 <?
-	echo "<p class='create_new_album'><a href='?action=createAlbumForm'> create a new album</a></p>";
+
 
 	//var_dump($data);
 
@@ -16,10 +20,11 @@
 		echo '<li><span class="album_label">Image:</span> <span class="album_value">  '.$album['albumImage'].'</span></li>';
 		echo '<li><span class="album_label">Description:</span> <span class="album_value">  '.$album['albumDescription'].'</span></li>';
 		echo '<li><span class="album_label">Release Date:</span> <span class="album_value">  '.$album['albumReleaseDate'].'</span></li>';
+		echo '<div class="clear_fix"></div>';
 		echo '</ul>';
 		echo "<div class='album_buttons'>";
-		echo "<a class='custom_button' href='?action=deleteAlbum&albumId=".$album["albumId"]."'> delete</a>";
 		echo "<a class='custom_button' href='?action=updateAlbumForm&albumId=".$album["albumId"]."'>  update</a>";
+		echo "<a class='custom_button' href='?action=deleteAlbum&albumId=".$album["albumId"]."'> delete</a>";
 		echo '<div class="clear_fix"></div>';
 		echo "</div>";
 		echo '<div class="clear_fix"></div>';
