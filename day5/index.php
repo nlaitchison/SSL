@@ -6,45 +6,47 @@ include 'models/viewModel.php';
 include 'models/validationModel.php';
 include 'models/usersModel.php';
 include 'models/albumsModel.php';
+include 'models/checklogin.php';
 
 $viewModel = new viewModel();
 $validationModel = new validationModel();
 $usersModel = new usersModel();
 $albumsModel = new albumsModel();
+$checkLogin = new ckUser();
 
-$data = array("name"=>"nicole");
-$viewModel->getView("views/header_admin.php", $data);
-//$viewModel->getView("views/nav.php", $data);
-//$viewModel->getView("views/body.php", $data);
-//$viewModel->getView("views/album_create.php", $data);
-// $viewModel->getView("views/user_create.php", $data);
+
 
 if(!empty($_GET["action"])){
 	
 	if($_GET["action"] == "login"){
 
-		echo 'login clicked,  ';
+		$data = array('un' => $_POST["login_email"], 'pass' => $_POST["login_password"]);
+		$loggedIn = $checkLogin->checkUser($data);
+		$msg="Invalid Login";
+
+		if($loggedIn == 1){
+			$viewModel->getView("views/header_admin.php");
+			$data = $albumsModel->getAlbums();
+			$viewModel->getView("views/album_read.php", $data);
+		}
+
 		//var_dump($_POST);
 
-		$loginEmail = $_POST["login_email"];
-		$loginPassword = $_POST["login_password"];
+		// $loginEmail = $_POST["login_email"];
+		// $loginPassword = $_POST["login_password"];
 
-		$validateLogin = $validationModel->validateLogin($loginEmail, $loginPassword);
+		// $validateLogin = $validationModel->validateLogin($loginEmail, $loginPassword);
 
-		echo 'validateLogin: ';
-		echo $validateLogin;
+		// echo 'validateLogin: ';
+		// echo $validateLogin;
 	}
 
 	// admin album crud actions
 	else if($_GET["action"] == "createAlbumForm"){
+		$viewModel->getView("views/header_admin.php");
 		$viewModel->getView("views/album_create.php", $data);
 	}
 	else if($_GET["action"] == "createAlbum"){
-		
-		// $fieldsetOne = array('albumName' => $_POST["album_name"], 'albumArtist' => $_POST["album_artist"], 'albumPreorder' => $_POST["album_preorder"]);
-		// $fieldsetTwo = array('albumImage' => $_POST["album_image"], 'albumDescription' => $_POST["album_description"], 'albumRelease' =>$_POST["album_release_date"]);
-		// $fieldsetThree = $_POST["album_condition"];
-		// $fieldsetFour = $_POST["artist_site"];
 
 		$twelve = array('twelve' => $_POST["twelve"], 'twelve_stock' => $_POST["twelve_stock"], 'twelve_price' => $_POST["twelve_price"], 'twelve_color' => $_POST["twelve_color"]);
 		$seven = array('seven' => $_POST["seven"], 'seven_stock' => $_POST["seven_stock"], 'seven_price' => $_POST["seven_price"], 'seven_color' => $_POST["seven_color"]);
@@ -60,21 +62,24 @@ if(!empty($_GET["action"])){
 
 		$albumsModel->createAlbum($formInputs, $twelve, $seven, $cd, $cassette);
 
+		$viewModel->getView("views/header_admin.php");
 		$data = $albumsModel->getAlbums();
 		$viewModel->getView("views/album_read.php", $data);
 	}
 	else if($_GET["action"] == "adminAlbumInfo"){
+		$viewModel->getView("views/header_admin.php");
 		$data = $albumsModel->getAlbums();
-		//var_dump($data);
 		$viewModel->getView("views/album_read.php", $data);
 	}
 	else if($_GET["action"] == "deleteAlbum"){
 		$albumsModel->deleteAlbum($_GET['albumId']);
 
+		$viewModel->getView("views/header_admin.php");
 		$data = $albumsModel->getAlbums();
 		$viewModel->getView("views/album_read.php", $data);
 	}
 	else if($_GET["action"] == "updateAlbumForm"){
+		$viewModel->getView("views/header_admin.php");
 		$data = $albumsModel->getAlbumInfo($_GET['albumId']);
 		$viewModel->getView("views/album_update.php", $data);
 	}
@@ -90,79 +95,55 @@ if(!empty($_GET["action"])){
 		//$cassette = array('cassette' => $_POST["cassette"], 'cassette_stock' => $_POST["cassette_stock"], 'cd_price' => $_POST["cassette_price"]);
 
 		$albumsModel->updateAlbum($_POST["albumId"], $fieldsetOne, $fieldsetTwo, $fieldsetThree, $fieldsetFour);
-
+		$viewModel->getView("views/header_admin.php");
 		$data = $albumsModel->getAlbums();
 		$viewModel->getView("views/album_read.php", $data);
 	}
 
 	// user crud actions
 	else if($_GET["action"] == "userInfo"){
+		$viewModel->getView("views/header_admin.php");
 		$data = $usersModel->getUsers();
 		$viewModel->getView("views/user_read.php", $data);
 	}
 	else if($_GET["action"] == "updateUserForm"){
+		$viewModel->getView("views/header_admin.php");
 		$data = $usersModel->getUserInfo($_GET['user_id']);
 		$viewModel->getView("views/user_update.php", $data);
 	}
 	else if($_GET["action"] == "updateUser"){
 		$usersModel->updateUser($_POST['uid'], $_POST['uname'], $_POST['upassword']);
 
+		$viewModel->getView("views/header_admin.php");
 		$data = $usersModel->getUsers();
 		$viewModel->getView("views/user_read.php", $data);
 	}
 	else if($_GET["action"] == "deleteUser"){
 		$usersModel->deleteUser($_GET['user_id']);
 
+		$viewModel->getView("views/header_admin.php");
 		$data = $usersModel->getUsers();
 		$viewModel->getView("views/user_read.php", $data);
 	}
 	else if($_GET["action"] == "createUser"){
 		$usersModel->createUser($_POST['create_name'], $_POST['create_password']);
 
+		$viewModel->getView("views/header_admin.php");
 		$data = $usersModel->getUsers();
 		$viewModel->getView("views/user_read.php", $data);
 	}
+
+	else if($_GET["action"] == "logout"){
+		session_start();
+		$_SESSION['loggedin'] = 0;
+		$viewModel->getView("views/header.php");
+		session_destroy();
+	}
 }
 else{
-	$data = $albumsModel->getAlbums();	
-	$viewModel->getView("views/album_read.php", $data);
+	$viewModel->getView("views/header.php");
 }
 
-
-
-$viewModel->getView("views/footer.php", $data);
+$viewModel->getView("views/footer.php");
 
 ?>
-
-
-<!--  if(!empty($_GET["action"])){
-	
-	if($_GET["action"] == "form"){
-
-		$viewModel->getView("views/form.php", $data);
-
-	}else if($_GET["action"] == "process"){
-
-		//var_dump($_POST);
-		// echo $_POST["username"];
-
-		$email = $_POST["username"];
-		$p = "/^[^@]*@[^@]*\.[^@]*$/";
-
-		if (preg_match($p, $email)){
-       		echo "valid email"; 
-        }else{
-        	echo "invalid email";
-        }     
-
-	}
-
-}else{
-
-	$viewModel->getView("views/form.php", $data);
-
-}  
-
-//<cfdump var="">
-
--->
