@@ -226,6 +226,16 @@ nav li a:hover{
 	height: 400px;
 }
 
+.abum_name{
+	color: #A30006;
+	font-weight: bold;
+	padding-top: 5px;
+}
+
+.album_formats{
+	color: #999;
+}
+
 
 /* ---------------------------------------------------------------------------------------------------
 		∆ Admin
@@ -266,8 +276,8 @@ h2#page_title{
 }
 
 .album_label{
-	width: 100px;
-	text-align: right;
+	/*width: 100px;*/
+	/*text-align: right;*/
 	font-weight: bold;
 	float: left;
 	margin-right: 10px;
@@ -307,6 +317,15 @@ h2#page_title{
 
 .album_artist_header{
 	font: 18px/26px 'Helvetica Neue', sans-serif;
+}
+
+.admin_album_art{
+	float: left;
+}
+
+.admin_albums ul{
+	float: left;
+	margin-left: 15px;
 }
 
 /* ---------------------------------------------------------------------------------------------------

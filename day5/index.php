@@ -44,7 +44,7 @@ if(!empty($_GET["action"])){
 	// admin album crud actions
 	else if($_GET["action"] == "createAlbumForm"){
 		$viewModel->getView("views/header_admin.php");
-		$viewModel->getView("views/album_create.php", $data);
+		$viewModel->getView("views/album_create.php");
 	}
 	else if($_GET["action"] == "createAlbum"){
 
@@ -137,11 +137,15 @@ if(!empty($_GET["action"])){
 		session_start();
 		$_SESSION['loggedin'] = 0;
 		$viewModel->getView("views/header.php");
+		$data = $albumsModel->getAlbums();
+		$viewModel->getView("views/landing_body.php", $data);
 		session_destroy();
 	}
 }
 else{
 	$viewModel->getView("views/header.php");
+	$data = $albumsModel->getAlbums();
+	$viewModel->getView("views/landing_body.php", $data);
 }
 
 $viewModel->getView("views/footer.php");

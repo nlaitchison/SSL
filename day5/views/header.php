@@ -1,4 +1,6 @@
-
+<?php 
+include 'models/protector.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>

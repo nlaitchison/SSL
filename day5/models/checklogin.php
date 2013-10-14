@@ -18,6 +18,7 @@
 			if($isgood > 0){
 
 				$_SESSION["loggedin"] = 1;
+				$_SESSION["username"] = $data["un"];
 				return 1;
 
 			}else{

@@ -12,11 +12,9 @@
 	<section>
 		<form id="create_album_form" method="post" action="?action=createAlbum">
 			<fieldset>
-				<div class="hidden_id">
-					<input type="text" name="albumId" readonly="readonly" />
-				</div>
 				<div class="form_input">
 					<label for="album_name"> <b> Album Name </b> </label>
+					<p class="error_msg"></p>
 					<input type="text" name="album_name" id="album_name" />
 					<label class="checkbox"> 
 						<input type="checkbox" name="album_preorder" value="1" /> 
@@ -27,33 +25,37 @@
 				<div class="form_input">
 					<label for="album_artist"> <b> Artist Name </b></label>
 					<input type="text" name="album_artist" id="album_artist" />
+					<p class="error_msg"></p>
 				</div>
 			</fieldset>	
 			<fieldset>
 				<div class="form_input">
 					<label for="album_image"> <b> Album Image</b> </label>
 					<input type="file" accept="image" name="album_image" id="album_image"/>
+					<p class="error_msg"></p>
 				</div>
 				<div class="form_input">
 					<label for="album_description"> <b> Album Description </b></label>
 					<div class="clear_fix"></div>
 					<textarea name="album_description" id="album_description">Enter a description...</textarea>
+					<p class="error_msg"></p>
 				</div>
 				<div class="form_input">
 					<label for="album_release_date"> <b> Album Release Date</b> </label>
 					<input type="date" name="album_release_date" id="album_release_date" placeholder="MM/DD/YYYY" />
+					<p class="error_msg"></p>
 				</div>
 			</fieldset>
 			<fieldset>
 				<div class="form_input">
 					<label> <b> Album Condition </b></label>
 					<label class="radio"> 
-						<input type="radio" name="album_condition" value="new" checked="checked" /> 
+						<input type="radio" name="album_condition" value="New" checked="checked" /> 
 							New 
 					</label>
 					
 					<label class="radio"> 
-						<input type="radio" name="album_condition" value="used" />
+						<input type="radio" name="album_condition" value="Used" />
 						Used 
 					</label>
 				</div>
@@ -76,6 +78,7 @@
 								<option value="Purple Red Speckled">Purple Red Speckled</option>
 								<option value="Gold">Gold</option>
 							</select>
+							<p class="error_msg"></p>
 						</div>
 					</div>
 					<div class="form_input">
@@ -94,6 +97,7 @@
 								<option value="Purple Red Speckled">Purple Red Speckled</option>
 								<option value="Gold">Gold</option>
 							</select>
+							<p class="error_msg"></p>
 						</div>
 					</div>
 					<div class="form_input">
@@ -104,6 +108,7 @@
 						<div class="format_inputs">
 							<input type="text" name="cd_stock" placeholder="Enter # in Stock"/>
 							<input type="text" name="cd_price" placeholder="Enter Price - $0.00"/>
+							<p class="error_msg"></p>
 						</div>
 					</div>
 					<div class="form_input">
@@ -114,6 +119,7 @@
 						<div class="format_inputs">
 							<input type="text" name="cassette_stock" placeholder="Enter # in Stock"/>
 							<input type="text" name="cassette_price" placeholder="Enter Price - $0.00"/>
+							<p class="error_msg"></p>
 						</div>
 					</div>
 			</fieldset>

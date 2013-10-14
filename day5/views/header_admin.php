@@ -21,7 +21,7 @@ include 'models/protector.php';
 					<div id="logo"><a href="#"><img src="images/logo.png" alt="Logo Here"></a></div>
 
 					<div id="user_logout">
-						<p> username | <a class="custom_button" href="?action=logout"> Logout </a> </p>
+						<p><? echo $_SESSION["username"]; ?> | <a class="custom_button" href="?action=logout"> Logout </a> </p>
 					</div>
 
 					<div class="clear_fix"></div>

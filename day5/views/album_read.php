@@ -6,9 +6,6 @@
 <div class='clear_fix'></div>
 <?
 
-
-	//var_dump($data);
-
 	foreach($data as $album){
 		echo '<div class="admin_albums">';
 		echo '<div class="album_headers">';
@@ -16,8 +13,9 @@
 		echo '<span class="album_artist_header">'.$album['albumArtist'].'</span>';
 		echo '</div>';
 		echo "<div class='album_divider'></div>";
+		echo '<img class="admin_album_art" src="images/album_art/'.$album['albumImage'].'" alt="Album Artwork" width="150" height="150"/>';
 		echo '<ul>';
-		echo '<li><span class="album_label">Image:</span> <span class="album_value">  '.$album['albumImage'].'</span></li>';
+		echo '<li><span class="album_label">Condition:</span> <span class="album_value">  '.$album['albumCondition'].'</span></li>';
 		echo '<li><span class="album_label">Description:</span> <span class="album_value">  '.$album['albumDescription'].'</span></li>';
 		echo '<li><span class="album_label">Release Date:</span> <span class="album_value">  '.$album['albumReleaseDate'].'</span></li>';
 		echo '<li><span class="album_label">Artist Website:</span> <span class="album_value">  '.$album['albumWebsite'].'</span></li>';

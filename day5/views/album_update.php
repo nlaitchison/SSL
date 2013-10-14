@@ -8,7 +8,7 @@
 	<div class='clear_fix'></div>
 
 	<section id="preview_album_image"> 
-		<img src="images/<?=$album["albumImage"]?>" alt="album Placeholder Image">
+		<img src="images/album_art/<?=$album["albumImage"]?>" alt="album Placeholder Image">
 	</section>
 
 	<section>
@@ -50,12 +50,12 @@
 				<div class="form_input">
 					<label> <b> Album Condition </b></label>
 					<label class="radio"> 
-						<input type="radio" name="album_condition" value="new" checked="checked" /> 
+						<input type="radio" name="album_condition" value="New" checked="checked" /> 
 							New 
 					</label>
 					
 					<label class="radio"> 
-						<input type="radio" name="album_condition" value="used" />
+						<input type="radio" name="album_condition" value="Used" />
 						Used 
 					</label>
 				</div>

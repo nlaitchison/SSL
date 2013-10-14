@@ -4,17 +4,18 @@
 
 		public function getAlbums(){
 			$db = new PDO("mysql:hostname=localhost;dbname=database_ssl_1310","root","root");
-			$st = $db->prepare("select * from albums");
+			// $st = $db->prepare("select * from albums order by albumId desc");
+			$st = $db->prepare("select * from albums as a join album_formats as af on af.albumId = a.albumId order by a.albumId desc");
 			$st->execute();
 			$obj = $st->fetchAll();
 			return $obj;
 		}
 
-		public function getAlbumInfo($albumId){
+		public function getAlbumInfo($data){
 			$db = new PDO("mysql:hostname=localhost;dbname=database_ssl_1310","root","root");
-			$sql = "select * from albums where albumId = :albumId";
+			$sql = "select * from albums where albumId = :data";
 			$st = $db->prepare($sql);
-			$st->execute(array(":albumId"=>$albumId));
+			$st->execute(array(":data"=>$data));
 			$obj = $st->fetchAll();
 			return $obj;
 		}
