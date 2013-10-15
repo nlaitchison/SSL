@@ -57,14 +57,25 @@ if(!empty($_GET["action"])){
 		'albumImage' => $_POST["album_image"], 'albumDescription' => $_POST["album_description"], 'albumRelease' =>$_POST["album_release_date"],
 		'albumCondition' =>$_POST["album_condition"], 'albumWebsite'=>$_POST["artist_site"]);
 
+		$allFormInputs = array('formInputs'=>$formInputs, 'twelveInputs'=>$twelve, 'sevenInputs'=>$seven, 'cdInputs'=>$cd, 'cassetteInputs'=>$cassette);
+
 		//$validateCreateItem = $validationModel->validateCreateItem($fieldsetOne, $fieldsetTwo, $fieldsetThree, $fieldsetFour, $twelve, $seven, $cd, $cassette);
-		//$validateCreateItem = $validationModel->validateCreateItem($formInputs, $twelve, $seven, $cd, $cassette);
+		$validateCreateItem = $validationModel->validateCreateItem($formInputs, $twelve, $seven, $cd, $cassette);	
+		//var_dump($twelve['twelve']);
+		if($validateCreateItem['valid'] == false){
+			$viewModel->getView("views/header_admin.php");
+			$viewModel->getView("views/album_create_invalid.php", $allFormInputs, $validateCreateItem);	
+			// var_dump($formInputs);
 
-		$albumsModel->createAlbum($formInputs, $twelve, $seven, $cd, $cassette);
+		}
+		else{
+			$albumsModel->createAlbum($formInputs, $twelve, $seven, $cd, $cassette);
 
-		$viewModel->getView("views/header_admin.php");
-		$data = $albumsModel->getAlbums();
-		$viewModel->getView("views/album_read.php", $data);
+			$viewModel->getView("views/header_admin.php");
+			$data = $albumsModel->getAlbums();
+			$viewModel->getView("views/album_read.php", $data);
+		}
+
 	}
 	else if($_GET["action"] == "adminAlbumInfo"){
 		$viewModel->getView("views/header_admin.php");

@@ -14,10 +14,9 @@
 			<fieldset>
 				<div class="form_input">
 					<label for="album_name"> <b> Album Name </b> </label>
-					<p class="error_msg"></p>
-					<input type="text" name="album_name" id="album_name" />
+					<input type="text" name="album_name" id="album_name"/>
 					<label class="checkbox"> 
-						<input type="checkbox" name="album_preorder" value="1" /> 
+						<input type="checkbox" name="album_preorder" value="1"/> 
 							Preorder
 					</label>
 					<div class="clear_fix"></div>
@@ -25,25 +24,21 @@
 				<div class="form_input">
 					<label for="album_artist"> <b> Artist Name </b></label>
 					<input type="text" name="album_artist" id="album_artist" />
-					<p class="error_msg"></p>
 				</div>
 			</fieldset>	
 			<fieldset>
 				<div class="form_input">
 					<label for="album_image"> <b> Album Image</b> </label>
 					<input type="file" accept="image" name="album_image" id="album_image"/>
-					<p class="error_msg"></p>
 				</div>
 				<div class="form_input">
 					<label for="album_description"> <b> Album Description </b></label>
 					<div class="clear_fix"></div>
-					<textarea name="album_description" id="album_description">Enter a description...</textarea>
-					<p class="error_msg"></p>
+					<textarea name="album_description" id="album_description">Enter a description... </textarea>
 				</div>
 				<div class="form_input">
 					<label for="album_release_date"> <b> Album Release Date</b> </label>
 					<input type="date" name="album_release_date" id="album_release_date" placeholder="MM/DD/YYYY" />
-					<p class="error_msg"></p>
 				</div>
 			</fieldset>
 			<fieldset>
@@ -69,7 +64,7 @@
 						</label>
 						<div class="format_inputs">
 							<input type="text" name="twelve_stock" placeholder="Enter # in Stock"/>
-							<input type="text" name="twelve_price" placeholder="Enter Price - $0.00"/>
+							<input type="text" name="twelve_price" placeholder="Enter Price - 0.00"/>
 							<select multiple id="twelve_color" name="twelve_color[]">
 								<option value="Black">Black</option>
 								<option value="White">White</option>
@@ -78,7 +73,6 @@
 								<option value="Purple Red Speckled">Purple Red Speckled</option>
 								<option value="Gold">Gold</option>
 							</select>
-							<p class="error_msg"></p>
 						</div>
 					</div>
 					<div class="form_input">
@@ -88,7 +82,7 @@
 						</label>
 						<div class="format_inputs">
 							<input type="text" name="seven_stock" placeholder="Enter # in Stock"/>
-							<input type="text" name="seven_price" placeholder="Enter Price - $0.00"/>
+							<input type="text" name="seven_price" placeholder="Enter Price - 0.00"/>
 							<select multiple id="seven_color" name="seven_color[]">
 								<option value="Black">Black</option>
 								<option value="White">White</option>
@@ -97,7 +91,6 @@
 								<option value="Purple Red Speckled">Purple Red Speckled</option>
 								<option value="Gold">Gold</option>
 							</select>
-							<p class="error_msg"></p>
 						</div>
 					</div>
 					<div class="form_input">
@@ -107,8 +100,7 @@
 						</label>
 						<div class="format_inputs">
 							<input type="text" name="cd_stock" placeholder="Enter # in Stock"/>
-							<input type="text" name="cd_price" placeholder="Enter Price - $0.00"/>
-							<p class="error_msg"></p>
+							<input type="text" name="cd_price" placeholder="Enter Price - 0.00"/>
 						</div>
 					</div>
 					<div class="form_input">
@@ -118,15 +110,14 @@
 						</label>
 						<div class="format_inputs">
 							<input type="text" name="cassette_stock" placeholder="Enter # in Stock"/>
-							<input type="text" name="cassette_price" placeholder="Enter Price - $0.00"/>
-							<p class="error_msg"></p>
+							<input type="text" name="cassette_price" placeholder="Enter Price - 0.00"/>
 						</div>
 					</div>
 			</fieldset>
 			<fieldset>
 				<div class="form_input">
 					<label for="artist_site"> <b> Artist Website </b> </label>
-					<input type="url" name="artist_site" id="artist_site" placeholder="http://sample.com"/>
+					<input type="url" name="artist_site" id="artist_site" placeholder="http://sample.com" />
 				</div>
 			</fieldset>	
 			<fieldset id="buttons">

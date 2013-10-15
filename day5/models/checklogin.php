@@ -10,7 +10,7 @@
 
 			$st = $db->prepare($q);
 
-			$st->execute(array(":un"=>$data["un"], ":pass"=>$data["pass"]));
+			$st->execute(array(":un"=>$data["un"], ":pass"=>md5($data["pass"])));
 
 			$st->fetchAll();
 			$isgood = $st->rowCount();

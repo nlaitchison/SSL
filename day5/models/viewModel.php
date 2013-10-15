@@ -6,7 +6,7 @@ class viewModel{
 
 	//}
 
-	public function getView($pagefile="",$data=array()){
+	public function getView($pagefile="",$data=array(), $dataTwo=array()){
 
 		include $pagefile;
 
