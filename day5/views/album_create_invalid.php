@@ -119,10 +119,10 @@
 						<label class="checkbox"> 
 							<? if($data["cdInputs"]["cd"] == "cd")
 							{
-								echo'<input type="checkbox" name="twelve" value="cd" checked="checked" /> CD';
+								echo'<input type="checkbox" name="cd" value="cd" checked="checked" /> CD';
 							}
 							else{
-								echo'<input type="checkbox" name="twelve" value="cd" /> CD';
+								echo'<input type="checkbox" name="cd" value="cd" /> CD';
 							}?>
 						</label>
 						<div class="format_inputs">

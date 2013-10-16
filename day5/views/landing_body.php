@@ -25,7 +25,7 @@
 									echo '<img src="images/album_art/'.$album["albumImage"].'"" alt="Album Art for '.$album["albumName"].' by '.$album["albumArtist"].'" width="220" height="220"/>'; 
 									echo '<p class="abum_name">' .$album["albumName"]. '</p>';
 									echo '<p class="band_name">' .$album["albumArtist"]. '</p>';
-									echo '<p class="album_formats"> Formats </p>';
+									echo '<p class="album_formats">' .$album["formatType"]. '</p>';
 									echo '</li>';
 									$count++;
 								}
@@ -46,7 +46,7 @@
 									echo '<img src="images/album_art/'.$album["albumImage"].'"" alt="Album Art for '.$album["albumName"].' by '.$album["albumArtist"].'" width="220" height="220"/>'; 
 									echo '<p class="abum_name">' .$album["albumName"]. '</p>';
 									echo '<p class="band_name">' .$album["albumArtist"]. '</p>';
-									echo '<p class="album_formats"> Formats </p>';
+									echo '<p class="album_formats">' .$album["formatType"]. '</p>';
 									echo '</li>';
 									$countTwo++;
 								}
