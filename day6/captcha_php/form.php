@@ -13,7 +13,7 @@ if( isset($_POST['submit'])) {
 
 	<form action="form.php" method="post">
 		<img src="captcha.php?width=250&height=70&characters=5" /><br />
-		<label for="security_code">Security Code: </label><input id="security_code" name="security_code" type="text" /><br />
+		<label for="security_code">Enter Captcha: </label><input id="security_code" name="security_code" type="text" /><br />
 		<input type="submit" name="submit" value="Submit" />
 	</form>
 
